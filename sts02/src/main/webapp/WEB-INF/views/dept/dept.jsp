@@ -10,21 +10,14 @@
 <script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
 <script type="text/javascript" src="../js/bootstrap.js"></script>
 <script type="text/javascript">
-var del=false;
 $(function(){
-	
-	$('form:eq(0)').one('submit',function(){
+	$('form').one('submit',function(){
 		$(this).prev().html('<h2>수정 페이지<span>(dept Table)</span></h2>');
 		//$(this).find('input').filter('input:gt(0)').removeProp('readonly');
 		//$(this).find('input').not('input:eq(0)').removeProp('readonly');
 		$('[readonly=readonly]').not(':eq(0)').removeProp('readonly');
 		return false;
 	});
-	$('form:eq(1)').submit(function(){
-		del=window.confirm('삭제하시겠습니까?');
-		return del;
-	});
-	
 });
 </script>
 </head>
@@ -56,9 +49,6 @@ $(function(){
 					<div class="form-group">
 						<button class="btn btn-primary btn-block">수 정</button>
 					</div>
-				</form>
-				<form action="./dept/${bean.deptno }" method="post">
-					<button class="btn btn-danger btn-block">삭제</button>
 				</form>
 			</div>
 		</div>

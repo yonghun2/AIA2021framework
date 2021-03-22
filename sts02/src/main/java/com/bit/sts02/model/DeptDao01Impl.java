@@ -93,31 +93,7 @@ public class DeptDao01Impl implements DeptDao {
 
 	@Override
 	public int deleteOne(int deptno) {
-		String sql="delete from dept where deptno=?";
-		try(
-			Connection conn=dataSource.getConnection();
-			PreparedStatement pstmt=conn.prepareStatement(sql);
-		){
-			pstmt.setInt(1, deptno);
-			return pstmt.executeUpdate();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
 		return 0;
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
