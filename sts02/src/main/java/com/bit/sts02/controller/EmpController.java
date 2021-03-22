@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import org.springframework.validation.BindingResult;
 =======
 >>>>>>> parent of 8915415 (spring 3.x & ibatis)
@@ -21,6 +22,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestMapping;
 >>>>>>> parent of ce447c1 (spring 3.x & ibatis)
 =======
+>>>>>>> parent of 8915415 (spring 3.x & ibatis)
+=======
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 >>>>>>> parent of 8915415 (spring 3.x & ibatis)
 =======
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -73,6 +79,7 @@ public class EmpController {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@RequestMapping(value = "/one", method = RequestMethod.GET)
 	public void detail(@RequestParam("idx") int empno,Model model) {
 		model.addAttribute("bean", empDao.selectOne(empno));
@@ -92,6 +99,8 @@ public class EmpController {
 	}
 =======
 >>>>>>> parent of ce447c1 (spring 3.x & ibatis)
+=======
+>>>>>>> parent of 8915415 (spring 3.x & ibatis)
 =======
 >>>>>>> parent of 8915415 (spring 3.x & ibatis)
 =======
