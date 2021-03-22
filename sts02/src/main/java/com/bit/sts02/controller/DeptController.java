@@ -8,7 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import org.springframework.web.bind.annotation.ModelAttribute;
+=======
+>>>>>>> parent of 06b44f0 (spring 3.x CRUD)
 import org.springframework.web.bind.annotation.PathVariable;
 =======
 >>>>>>> parent of 2888712 (spring 3.x CRUD)
@@ -44,9 +47,7 @@ public class DeptController {
 		return "redirect:list";
 	}
 	@RequestMapping(value="add",method=RequestMethod.POST)
-	public String add(@RequestParam("deptno")int deptno
-			,@RequestParam("dname") String dname
-			,@RequestParam("loc") String loc) throws UnsupportedEncodingException {
+	public String add(int deptno,String dname,String loc) throws UnsupportedEncodingException {
 //		req.setCharacterEncoding("utf-8");
 		deptDao.insertOne(new DeptVo(deptno,dname,loc));
 		return "redirect:list";
@@ -58,8 +59,9 @@ public class DeptController {
 	}
 	
 	@RequestMapping(value = "dept",method = RequestMethod.POST)
-	public String edit(@ModelAttribute DeptVo bean) throws UnsupportedEncodingException {
+	public String edit(int deptno,String dname,String loc) throws UnsupportedEncodingException {
 		
+		DeptVo bean = new DeptVo(deptno,dname,loc);
 		deptDao.updateOne(bean);
 		return "redirect:dept?idx="+bean.getDeptno();
 	}
