@@ -18,22 +18,22 @@ public class EmpDaoImpl implements EmpDao{
 
 	@Override
 	public EmpVo selectOne(int empno) {
-		return (EmpVo) sqlMapClientTemplate.queryForObject("emp.selectOne",empno);
+		return null;
 	}
 
 	@Override
 	public void insertOne(EmpVo bean) {
-		sqlMapClientTemplate.insert("emp.insertOne",bean);
+		
 	}
 
 	@Override
 	public int updateOne(EmpVo bean) {
-		return sqlMapClientTemplate.update("emp.updateOne",bean);
+		return 0;
 	}
 
 	@Override
 	public int deleteOne(int empno) {
-		return sqlMapClientTemplate.delete("emp.deleteOne",empno);
+		return 0;
 	}
 
 }

@@ -24,23 +24,16 @@
 		</div>
 		<div class="row">
 			<div class="col-sm-12">
-				<h2>입력 페이지<span>(EMP Table)</span></h2>
+				<h2>입력 페이지<span>(dept Table)</span></h2>
 				<form method="post">
 					<div class="form-group">
-						<input type="text" name="empno" placeholder="empno" class="form-control" />
+						<input type="text" name="deptno" placeholder="deptno" class="form-control" />
 					</div>
 					<div class="form-group">
-						<input type="text" name="ename" placeholder="ename" class="form-control" />
+						<input type="text" name="dname" placeholder="dname" class="form-control" />
 					</div>
 					<div class="form-group">
-						<input type="text" name="pay" placeholder="pay" class="form-control" />
-					</div>
-					<div class="form-group">
-						<select name="deptno" class="form-control">
-							<c:forEach items="${list }" var="bean">
-							<option value="${bean.deptno }">${bean.dname }</option>
-							</c:forEach>
-						</select>
+						<input type="text" name="loc" placeholder="loc" class="form-control" />
 					</div>
 					<div class="form-group">
 						<button class="btn btn-primary btn-block">입 력</button>

@@ -17,7 +17,7 @@ import com.bit.sts02.model.DeptDao;
 import com.bit.sts02.model.entity.DeptVo;
 
 @Controller
-@RequestMapping("/dept")
+@RequestMapping("/dept/")
 public class DeptController {
 	@Autowired
 	DeptDao deptDao;
