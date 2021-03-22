@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -40,7 +41,9 @@ public class DeptController {
 		return "redirect:list";
 	}
 	@RequestMapping(value="add",method=RequestMethod.POST)
-	public String add(int deptno,String dname,String loc) throws UnsupportedEncodingException {
+	public String add(@RequestParam("deptno")int deptno
+			,@RequestParam("dname") String dname
+			,@RequestParam("loc") String loc) throws UnsupportedEncodingException {
 //		req.setCharacterEncoding("utf-8");
 		deptDao.insertOne(new DeptVo(deptno,dname,loc));
 		return "redirect:list";
@@ -53,9 +56,8 @@ public class DeptController {
 	}
 	
 	@RequestMapping(value = "dept",method = RequestMethod.POST)
-	public String edit(int deptno,String dname,String loc) throws UnsupportedEncodingException {
+	public String edit(@ModelAttribute DeptVo bean) throws UnsupportedEncodingException {
 		
-		DeptVo bean = new DeptVo(deptno,dname,loc);
 		deptDao.updateOne(bean);
 		return "redirect:dept?idx="+bean.getDeptno();
 	}
