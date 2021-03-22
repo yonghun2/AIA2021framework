@@ -18,7 +18,6 @@ $(function(){
 		//$(this).find('input').filter('input:gt(0)').removeProp('readonly');
 		//$(this).find('input').not('input:eq(0)').removeProp('readonly');
 		$('[readonly=readonly]').not(':eq(0)').removeProp('readonly');
-		$('select').removeProp("disabled");
 		return false;
 	});
 	$('form:eq(1)').submit(function(){
@@ -46,31 +45,19 @@ $(function(){
 				<h2>상세 페이지<span>(dept Table)</span></h2>
 				<form method="post">
 					<div class="form-group">
-						<input type="text" value="${bean.empno }" name="empno" placeholder="empno" class="form-control" readonly="readonly" />
+						<input type="text" value="${bean.deptno }" name="deptno" placeholder="deptno" class="form-control" readonly="readonly" />
 					</div>
 					<div class="form-group">
-						<input type="text" value="${bean.ename }" name="ename" placeholder="ename" class="form-control" readonly="readonly"/>
+						<input type="text" value="${bean.dname }" name="dname" placeholder="dname" class="form-control" readonly="readonly" />
 					</div>
 					<div class="form-group">
-						<input type="text" value="${bean.pay }" name="pay" placeholder="pay" class="form-control" readonly="readonly"/>
-					</div>
-					<div class="form-group">
-						<select name="deptno" class="form-control" disabled="disabled">
-							<c:forEach items="${list }" var="bean2">
-							<c:if test="${bean.deptno eq bean2.deptno }">
-							<option value="${bean2.deptno }" selected="selected">${bean2.dname }</option>
-							</c:if>
-							<c:if test="${bean.deptno ne bean2.deptno }">
-							<option value="${bean2.deptno }">${bean2.dname }</option>
-							</c:if>
-							</c:forEach>
-						</select>
+						<input type="text" value="${bean.loc }" name="loc" placeholder="loc" class="form-control" readonly="readonly"/>
 					</div>
 					<div class="form-group">
 						<button class="btn btn-primary btn-block">수 정</button>
 					</div>
 				</form>
-				<form action="./one/${bean.empno }" method="post">
+				<form action="./dept/${bean.deptno }" method="post">
 					<button class="btn btn-danger btn-block">삭제</button>
 				</form>
 			</div>
